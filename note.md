@@ -1,4 +1,4 @@
-🚀 MERN Authentication Project
+🚀 MERN Authentication Project 9
 
 📌 Overview
 This is a MERN (MongoDB, Express, React, Node.js) Authentication System with user login, registration, JWT authentication, cookie-based session handling, and email verification.
