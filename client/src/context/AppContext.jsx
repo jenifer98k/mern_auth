@@ -9,7 +9,7 @@ export const AppContextProvider = (props) => {
   // send cookkies 
   axios.defaults.withCredentials = true;
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const backendUrl = 'https://mern-auth-server-lmu3.onrender.com';
   const [isLoggedin, setIsLoggedin] = useState(false);
   const [userData, setUserData] = useState(false);
 
