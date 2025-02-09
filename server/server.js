@@ -15,7 +15,8 @@ const allowedOrigins =  ['http://localhost:5173']
 // Middleware
 app.use(express.json());// all req wil be passed in json format
 app.use(cookieParser());
-app.use(cors({ origin: allowedOrigins , credentials: true }));// to send cookies in resposnes from express
+app.use(cors({ origin: 'https://mern-auth-client-93z2.onrender.com', credentials: true }));
+
 
 // API Endpoints 
 app.get("/", (req, res) => {
