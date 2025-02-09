@@ -11,11 +11,26 @@ import userRouter from "./routes/userRoutes.js";
 const app = express();
 const port = process.env.PORT || 4000;
 connectDB() 
-const allowedOrigins =  ['http://localhost:5173']
+const allowedOrigins = [
+  'http://localhost:5173', // For local development
+  'https://mern-auth-client-93z2.onrender.com' // For production
+];
 // Middleware
 app.use(express.json());// all req wil be passed in json format
 app.use(cookieParser());
-app.use(cors({ origin: 'https://mern-auth-client-93z2.onrender.com', credentials: true }));
+
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 
 
 // API Endpoints 
