@@ -21,10 +21,11 @@ app.use(cookieParser());
 
 
 app.use(cors({
-  origin: ["https://mern-auth-client-93z2.onrender.com"], // ✅ Allow only your frontend URL
-  credentials: true, // ✅ Allow cookies and authentication headers
+  origin: "https://mern-auth-client-93z2.onrender.com",
+  credentials: true, // ✅ Required for cookies to be sent
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
+  exposedHeaders: ["set-cookie"], // ✅ Expose cookies to the frontend
 }));
 
 
