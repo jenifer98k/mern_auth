@@ -14,6 +14,8 @@ export const AppContextProvider = (props) => {
   const [userData, setUserData] = useState(false);
 
   const getAuthState = async () => {
+    console.log("Setting cookie:", token);
+
     try {
       const { data } = await axios.get(backendUrl + "/api/auth/is-auth");
       if (data.success) {
